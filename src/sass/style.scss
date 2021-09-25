@@ -456,12 +456,12 @@ body::-webkit-scrollbar {
 
 
 
-.woocommerce-breadcrumb {
+.woofoos_breadcrumb {
 	display: inline-block;
 	margin: 1rem 0;
 }
 
-#masthead + .woocommerce-breadcrumb {
+#masthead + .woofoos_breadcrumb {
 	@extend .content__site_width;
 
 	display: block;

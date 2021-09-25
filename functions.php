@@ -9,10 +9,17 @@ add_action( 'after_setup_theme', 'woofooscomm__theme_setup' );
 
 function woofooscomm__theme_setup() {
 
-	register_nav_menus( array(
-		'top_menu'    => __( 'Top Menu', 'WooFoosComm' ),
-		'bottom_menu' => __( 'Bottom Menu', 'WooFoosComm' ),
-	) );
+	/* We'll want to setup menus here to match theme files */
+	if ( ! function_exists( 'woofooscomm__register_nav_menu' ) ) {
+
+		function woofooscomm__register_nav_menu() {
+			register_nav_menus( array(
+				'top_menu'    => __( 'Top Menu', 'text_domain' ),
+				'bottom_menu' => __( 'Bottom Menu', 'text_domain' ),
+			) );
+		}
+
+	}
 
 	/* Add theme support for automatic feed links. */
 	add_theme_support( 'automatic-feed-links' );
@@ -23,6 +30,16 @@ function woofooscomm__theme_setup() {
 	/* Add theme support for the WooComm */
 	add_theme_support( 'woocommerce' );
 
+
+
+	/* Admin > Template > Template Select — Modifications */
+	add_filter( 'default_page_template_title', 'woofooscomm__template_select_title', 10, 2 );
+
+	/* Change several of the breadcrumb defaults */
+	add_filter( 'woocommerce_breadcrumb_defaults', 'woofooscomm__breadcrumbs' );
+
+
+
 	/* Enqueue javascript */
 	add_action( 'wp_enqueue_scripts', 'woofooscomm__block_editor_styles' );
 
@@ -30,40 +47,38 @@ function woofooscomm__theme_setup() {
 	add_action( 'wp_head', 'woofooscomm__load_head_items' );
 
 	/* wp_footer */
-	add_action( 'wp_footer', 'wp_tr_load_foot_items' );
+	add_action( 'wp_footer', 'woofooscomm__load_foot_items' );
 
-	// add core markup to woocommerce pages
-	add_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper');
-	add_action('woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end');
-
-	/* Admin > Template > Template Select — Modifications */
-	add_filter( 'default_page_template_title', 'woocommerce_template_select_title', 10, 2 );
+	/* Remove the core <main> markup to woocommerce pages */
+	add_action('woocommerce_before_main_content', 'woofooscomm__output_wrapper_before');
+	add_action('woocommerce_after_main_content', 'woofooscomm__output_wrapper_end');
 
 }
 
-// overwrite existing output content wrapper function
-function woocommerce_output_content_wrapper() {
-    return ;
+if ( ! function_exists( 'woofooscomm__template_select_title' ) ) {
+
+	function woofooscomm__template_select_title( $label, $context ) {
+		return __( 'Site Width', 'WooFoosComm' );
+	}
+
 }
 
-function woocommerce_output_content_wrapper_end() {
-	return '';
+if ( ! function_exists( 'woofooscomm__breadcrumbs' ) ) {
+
+	function woofooscomm__breadcrumbs() {
+
+	    return array(
+	        'delimiter'   => '',
+	        'wrap_before' => '<nav class="woofoos_breadcrumb" itemprop="breadcrumb">',
+	        'wrap_after'  => '</nav>',
+	        'before'      => '<span>',
+	        'after'       => '</span>',
+	        'home'        => _x( 'Home', 'breadcrumb', 'woocommerce' ),
+	    );
+
+	}
+
 }
-
-
-
-function woocommerce_template_select_title( $label, $context ) {
-  return __( 'Site Width', 'WooFoosComm' );
-}
-
-
-
-
-
-
-
-
-
 
 if ( ! function_exists( 'woofooscomm__block_editor_styles' ) ) {
 
@@ -119,9 +134,8 @@ if ( ! function_exists( 'woofooscomm__block_editor_styles' ) ) {
 		}
 
 	}
+
 }
-
-
 
 if ( ! function_exists( 'woofooscomm__load_head_items' ) ) {
 
@@ -154,15 +168,35 @@ if ( ! function_exists( 'woofooscomm__load_head_items' ) ) {
 
 }
 
+if ( ! function_exists( 'woofooscomm__load_foot_items' ) ) {
+
+	function woofooscomm__load_foot_items() {
 
 
-if ( ! function_exists( 'woofooscomm__register_nav_menu' ) ) {
 
-	function woofooscomm__register_nav_menu() {
-		register_nav_menus( array(
-			'top_menu'    => __( 'Top Menu', 'text_domain' ),
-			'bottom_menu' => __( 'Bottom Menu', 'text_domain' ),
-		) );
 	}
 
 }
+
+if ( ! function_exists( 'woocommerce_output_content_wrapper' ) ) {
+
+	function woocommerce_output_content_wrapper() {
+
+	    return;
+
+	}
+
+}
+
+if ( ! function_exists( 'woofooscomm__output_wrapper_before' ) ) {
+
+	function woocommerce_output_content_wrapper_end() {
+
+		return;
+
+	}
+
+}
+
+
+

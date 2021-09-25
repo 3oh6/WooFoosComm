@@ -1,39 +1,29 @@
 {
-  "name": "woofooos",
-  "version": "0.1.0",
-  "description": "wp_template build",
+  "name": "WooFoosComm",
+  "version": "1.0.0",
+  "description": "WooCommerce version of my base child theme.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://bitbucket.org/3oh6/woofooos.com/"
+    "url": "https://github.com/3oh6/WooFoosComm"
   },
   "author": "Jody Bailey <jody@jodybailey.ca>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://bitbucket.org/3oh6/woofooos.com/issues"
-  },
-  "homepage": "https://bitbucket.org/3oh6/woofooos.com/",
+  "license": "GNU GENERAL PUBLIC LICENSE",
+  "browserslist": [
+    "last 2 version"
+  ],
   "devDependencies": {
-    "autoprefixer-core": "^5.2.1",
-    "grunt": "^0.4.5",
-    "grunt-autoprefixer": "^3.0.3",
-    "grunt-combine-media-queries": "^1.0.19",
-    "grunt-contrib-clean": "^0.6.0",
-    "grunt-contrib-concat": "^0.5.0",
-    "grunt-contrib-copy": "^0.7.0",
-    "grunt-contrib-cssmin": "^0.12.2",
-    "grunt-contrib-uglify": "^0.7.0",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-htmlclean": "^2.3.2",
-    "grunt-inline": "^0.3.4",
-    "grunt-perfbudget": "^0.1.8",
-    "grunt-postcss": "^0.5.5",
-    "grunt-sass": "^1.1.0",
-    "grunt-stripcomments": "^0.3.1",
-    "grunt-text-replace": "^0.4.0",
-    "grunt-usemin": "^3.0.0",
-    "load-grunt-tasks": "^3.1.0"
+    "@lodder/grunt-postcss": "^3.0.1",
+    "autoprefixer": "^10.3.5",
+    "cssnano": "^5.0.8",
+    "grunt": "^1.4.1",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-dart-sass": "^2.0.1",
+    "load-grunt-tasks": "^5.1.0",
+    "pixrem": "^5.0.0",
+    "postcss": "^8.3.8",
+    "sass": "^1.42.1"
   }
 }

@@ -11,7 +11,8 @@ module.exports = function(grunt) {
 					outputStyle: 'expanded'
 				},
 				files: {
-					'.tmp/css/style.css': ['style.scss']
+					'.tmp/css/style.css': ['src/sass/style.scss'],
+					'.tmp/css/custom-editor-style.css': ['src/sass/custom-editor-style.scss']
 				}
 			}
 		},
@@ -26,9 +27,23 @@ module.exports = function(grunt) {
 				processors: [
 					require('pixrem')(),
 					require('autoprefixer')(),
+					require('postcss-understrap-palette-generator')({
+						defaults: {
+
+						},
+
+						colors: [
+							"--Primary",
+							"--Primary-Dark",
+							"--Primary-Light",
+							"--Secondary",
+							"--Secondary-Dark",
+							"--Secondary-Light"
+						]
+					}),
 					require('cssnano')({
 						preset: ['default', {
-							discardComments: {removeAll: false }
+							discardComments: { removeAll: false }
 						}]
 					})
 				]

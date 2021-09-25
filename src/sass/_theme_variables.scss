@@ -1,0 +1,32 @@
+:root {
+  --primary: #336699;
+    --primary-dark: #21405F;
+    --primary-light: #3973AD;
+  --secondary: #5533ff;
+    --secondary-dark: #2104AE;
+    --secondary-light: #9580FE;
+  --grey: #afafaf;
+    --grey-dark: #878787;
+    --grey-light: #d1d1d1;
+  --white: #fff;
+  --black: #232323;
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+$primary: var(--primary);
+$primary__dark: var(--primary-dark);
+$primary__light: var(--primary-light);
+$secondary: var(--secondary);
+$secondary__dark: var(--secondary-dark);
+$secondary__light: var(--secondary-light);
+$white: var(--white);
+$black: var(--black);
+$grey: var(--grey);
+$grey__light: var(--grey-light);
+$grey__dark: var(--grey-dark);
+
+$gap: 50rem;
+$border_radius: 2px;
+
+$jasper: 900px;

@@ -24,6 +24,7 @@
     "load-grunt-tasks": "^5.1.0",
     "pixrem": "^5.0.0",
     "postcss": "^8.3.8",
+    "postcss-understrap-palette-generator": "github:bacoords/postcss-understrap-palette-generator",
     "sass": "^1.42.1"
   }
 }

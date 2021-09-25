@@ -1,0 +1,42 @@
+{
+	"version":1,
+	"settings": {
+		"color": {
+			"custom": false,
+			"customGradient": false,
+			"link": false,
+			"palette": [
+				{
+					"slug": "primary",
+					"color": "#336699",
+					"name": "Primary"
+				},
+				{
+					"slug": "primary-dark",
+					"color": "#21405F",
+					"name": "Primary Dark"
+				},
+				{
+					"slug": "primary-light",
+					"color": "#3973AD",
+					"name": "Primary Light"
+				},
+				{
+					"slug": "secondary",
+					"color": "#5533ff",
+					"name": "Secondary"
+				},
+				{
+					"slug": "secondary-dark",
+					"color": "#2104AE",
+					"name": "Secondary Dark"
+				},
+				{
+					"slug": "secondary-light",
+					"color": "#9580FE",
+					"name": "Secondary Light"
+				}
+			]
+		}
+	}
+}

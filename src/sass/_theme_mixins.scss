@@ -1,0 +1,85 @@
+// from Bourbon http://thoughtbot.com/bourbon/#clearfix
+// micro clearfix provides an easy way to contain floats without adding additional markup
+// acknowledgements - Micro Clearfix [Nicolas Gallagher](http://nicolasgallagher.com/micro-clearfix-hack/)
+//
+//	// Contain all floats within .wrapper
+//	.wrapper {
+//		@include clearfix;
+//		.content,
+//		.sidebar {
+//			float : left;
+//		}
+//	}
+
+@mixin cf {
+	*zoom: 1;
+
+	&:before,
+	&:after {
+		content: "";
+		display: table;
+		line-height: 0;
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+
+
+// from Bourbon http://thoughtbot.com/bourbon/#hide-text
+//
+// hide-text is an image replacement mixin. it is based off the HTML5-Boilerplate image-replacement
+// https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757c9e03dda4e463fb0d4db5a5f82d7
+//
+// this image replacement technique is an alternative to the text-indent technique, which has performance and other benefits
+//	http://nicolasgallagher.com/another-css-image-replacement-technique/
+//
+//	.ir {
+//		@include hide-text;
+//	}
+
+@mixin hide-text {
+	background-color: transparent;
+	border: 0;
+	color: transparent;
+	font: 0/0 a;
+	text-shadow: none;
+}
+
+
+
+// set all the colors for a link with one mixin call
+// order of arguments is:
+//
+// 		Link / Visited / Hover / Focus / Active
+//
+// those states not specified will inherit//
+// a { @include link-colors(#00c, #0cc, #c0c, #ccc, #cc0) }
+
+@mixin link-colors($link, $visited: false, $hover: false, $focus: false, $active: false) {
+	color: $link;
+	@if $visited {
+		&:visited {
+			color: $visited;
+		}
+	}
+	@if $hover {
+		&:hover {
+			color: $hover;
+		}
+	}
+	@if $focus {
+		&:focus {
+			color: $focus;
+		}
+	}
+	@if $active {
+		&:active {
+			color: $active;
+		}
+	}
+}
+
+

@@ -21,13 +21,13 @@ module.exports = function(grunt) {
 			options: {
 				map: {
 					inline: false,
-					annotation: 'cssmaps/'
+					annotation: 'css/cssmaps/'
 				},
 
 				processors: [
 					require('pixrem')(),
 					require('autoprefixer')(),
-					require('postcss-understrap-palette-generator')({
+					/*require('postcss-understrap-palette-generator')({
 						defaults: {
 
 						},
@@ -40,7 +40,7 @@ module.exports = function(grunt) {
 							"--Secondary-Dark",
 							"--Secondary-Light"
 						]
-					}),
+					}),*/
 					require('cssnano')({
 						preset: ['default', {
 							discardComments: { removeAll: false }
@@ -52,8 +52,10 @@ module.exports = function(grunt) {
 			dev: {
 				expand: 	true,
 				flatten: 	true,
-				src: 		['.tmp/css/*.css'],
-				dest: 		''
+				files: {
+					'style.css': ['.tmp/css/style.css'],
+					'css/custom-editor-style.css': ['.tmp/css/custom-editor-style.css']
+				}
 			}
 		},
 

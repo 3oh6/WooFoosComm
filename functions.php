@@ -50,8 +50,8 @@ function woofooscomm__theme_setup() {
 	add_action( 'wp_footer', 'woofooscomm__load_foot_items' );
 
 	/* Remove the core <main> markup to woocommerce pages */
-	add_action('woocommerce_before_main_content', 'woofooscomm__output_wrapper_before');
-	add_action('woocommerce_after_main_content', 'woofooscomm__output_wrapper_end');
+	add_action( 'woocommerce_before_main_content', 'woofooscomm__output_wrapper_before' );
+	add_action( 'woocommerce_after_main_content', 'woofooscomm__output_wrapper_end' );
 
 }
 
@@ -182,7 +182,7 @@ if ( ! function_exists( 'woocommerce_output_content_wrapper' ) ) {
 
 	function woocommerce_output_content_wrapper() {
 
-	    return;
+		return null;
 
 	}
 
@@ -192,7 +192,7 @@ if ( ! function_exists( 'woofooscomm__output_wrapper_before' ) ) {
 
 	function woocommerce_output_content_wrapper_end() {
 
-		return;
+		return null;
 
 	}
 

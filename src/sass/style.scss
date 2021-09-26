@@ -155,7 +155,6 @@ button {
 
 
 
-
 .content__narrow_width {
 	width: 60vw;
 	width: clamp(16rem, calc(100% - 2rem), 60rem);
@@ -459,6 +458,27 @@ body::-webkit-scrollbar {
 .woofoos_breadcrumb {
 	display: inline-block;
 	margin: 1rem 0;
+
+	span {
+		display: inline-block;
+		padding-right: 0.25rem;
+
+		&:after {
+			content: " | ";
+		}
+
+		&:last-of-type {
+			&:after {
+				content: "";
+				padding-right: 0;
+			}
+		}
+	}
+
+	a {
+		display: inline-block;
+		line-height: 1;
+	}
 }
 
 #masthead + .woofoos_breadcrumb {
@@ -466,6 +486,31 @@ body::-webkit-scrollbar {
 
 	display: block;
 }
+
+@media only screen and (min-width: $jasper) { // $jasper
+
+#masthead + .woofoos_breadcrumb {
+	border-top: none;
+}
+
+} // $jasper
+
+
+
+
+
+.content__with_sidebar {
+	display: flex;
+}
+
+.with_sidebar__main {
+	flex: 0 1 75%;
+}
+
+#sidebar {
+	flex: 0 1 25%;
+}
+
 
 
 

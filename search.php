@@ -27,7 +27,7 @@ get_header(); ?>
 
 
 
-	<main id="main" class="site_main">
+	<main id="main" class="site_main content__site_width">
 
 
 

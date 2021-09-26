@@ -11,19 +11,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-get_header(); ?>
+get_header();
 
-
-
-<?php $cat = array_pop( get_the_category() ); ?>
+$cat = array_pop( get_the_category() ); ?>
 
 
 
 <?php
 /**
- * woocommerce_before_main_content hook.
+ * Hook: woocommerce_before_main_content.
  *
- * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
  * @hooked woocommerce_breadcrumb - 20
  */
 do_action( 'woocommerce_before_main_content' );
@@ -41,13 +38,11 @@ do_action( 'woocommerce_before_main_content' );
 
 		<p><?php echo $cat->description; ?></p>
 
-		<?php
-		while ( have_posts() ) : the_post();
+		<?php while ( have_posts() ) : the_post();
 
 			get_template_part( 'template-parts/content/content', 'archive' );
 
-		endwhile;
-		?>
+		endwhile; ?>
 
 	</div>
 
@@ -71,7 +66,6 @@ do_action( 'woocommerce_before_main_content' );
 /**
  * woocommerce_after_main_content hook.
  *
- * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
  */
 do_action( 'woocommerce_after_main_content' );
 ?>

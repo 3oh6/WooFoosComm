@@ -1,6 +1,6 @@
 <?php
 /**
- * Archive template file
+ * Product Archive template file
  *
  * It's for archive pages.
  *
@@ -11,14 +11,25 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-get_header(); ?>
+get_header();
 
 
 
-<?php /**
+/* Product Category specific */
+$cat = get_queried_object();
+
+if( ! empty( $cat->parent ) ) {
+	$parent_cat_id = $cat->parent;
+		$parent_cat = get_term_by( 'id', $parent_cat_id, 'product_cat' );
+}
+?>
+
+
+
+<?php
+/**
  * Hook: woocommerce_before_main_content.
  *
- * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
  * @hooked woocommerce_breadcrumb - 20
  * @hooked WC_Structured_Data::generate_website_data() - 30
  */
@@ -39,7 +50,7 @@ do_action( 'woocommerce_before_main_content' );
 
 
 
-	<div>
+	<div class="product_list__main">
 
 		<?php if ( woocommerce_product_loop() ) :
 
@@ -99,7 +110,6 @@ do_action( 'woocommerce_before_main_content' );
 /**
  * woocommerce_after_main_content hook.
  *
- * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
  */
 do_action( 'woocommerce_after_main_content' );
 

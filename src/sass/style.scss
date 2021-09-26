@@ -345,7 +345,7 @@ body::-webkit-scrollbar {
 }
 
 	.top_logo {
-		align-self: end;
+		align-self: center;
 		grid-column: 1 / span 1;
 		grid-row: 1 / span 2;
 
@@ -499,6 +499,10 @@ body::-webkit-scrollbar {
 
 
 
+
+
+
+
 .content__with_sidebar {
 	display: flex;
 }
@@ -506,6 +510,21 @@ body::-webkit-scrollbar {
 .with_sidebar__main {
 	flex: 0 1 75%;
 }
+
+.product_list__main {
+
+}
+
+	ul.products {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		&.columns-3 {
+			display: flex;
+			justify-content: space-between;
+		}
+	}
 
 #sidebar {
 	flex: 0 1 25%;
@@ -519,7 +538,6 @@ body::-webkit-scrollbar {
 
 
 
-.product_list__container,
 .search_list__container {
 	display: grid;
 	grid-column-gap: $gap*0.5;

@@ -41,14 +41,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<div class="top_logo">
 
-			<a title="Return to <?php echo get_bloginfo( 'title' ); ?> home page" href="<?php echo get_bloginfo( 'url' ); ?>">
-				<svg viewBox="0 0 1617 510" role="img" aria-label="SVG wordmark that reads WooFoosComm" alt="SVG logo of website <?php echo get_bloginfo( 'title' ); ?>">
-					<title id="logo_title"><?php esc_html_e( 'WooFoosComm', 'WooFoosComm' ); ?></title>
-					<desc id="logo_desc"><?php esc_html_e( 'SVG wordmark that reads WooFoosComm', 'WooFoosComm' ); ?></desc>
-					<use xlink:href="#WooFoosComm" aria-hidden="true"></use>
-				</svg>
+			<?php // Site title or logo.
+			twentytwenty_site_logo();
 
-			</a>
+			// Site description.
+			twentytwenty_site_description(); ?>
 
 		</div><!-- .top_logo -->
 

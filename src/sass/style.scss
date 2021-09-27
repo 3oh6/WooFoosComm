@@ -1,19 +1,19 @@
 /*!
-Theme Name: GeneratePress - Child
-Theme URI: https://
+Theme Name: WooFoosGenerate
+Theme URI: https://wooFoosComm.dev
 Author: Jody Bailey
 Author URI: https://jodybailey.ca
-Description:
+Description: My WP/WC starter child theme of GeneratePress theme. A barebones, fast, ready to rock and roll starter theme for building out a modern WP site.
 Version: 1.0.0
 Requires at least: 4.5.0
 Tested up to: 5.8
 Requires PHP: 5.4.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: generatepress_child
+Text Domain: woofoosgenerate
 Template: GeneratePress
 
-This template is based on GeneratePress https://generatepress.com, (C) Tom Usborne https://tomusborne.com
+This template is a child of GeneratePress https://generatepress.com, (C) Tom Usborne https://tomusborne.com
 GeneratePress is based on Underscores http://underscores.me/, (C) 2012-2021 Automattic, Inc.
 */
 
@@ -45,8 +45,8 @@ GeneratePress is based on Underscores http://underscores.me/, (C) 2012-2021 Auto
 .wp-block-pullquote {
 
 	&.is-style-solid-color {
-		background-color: $grey__light;
-		color: $text__dark;
+		background-color: $grey__dark;
+		color: $text__light;
 	}
 
 }

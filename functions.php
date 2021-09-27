@@ -9,12 +9,10 @@
 
 function woofoosgenerate__theme_setup() {
 
-    /* Remove GeneratePress default menu */
+    /* Remove GeneratePress default Primary menu to initialize our own */
     unregister_nav_menu( 'primary' );
-
-    /* Register our own menus */
     register_nav_menus( array(
-        'top_menu'    => __( 'Top Menu', 'WooFoosComm' ),
+        'primary'    => __( 'Primary Menu', 'woofoosgenerate' )
     ) );
 
     /* Include external functions stolen from other sites ... no joke. */

@@ -1,11 +1,31 @@
 {
 	"version":1,
 	"settings": {
+		"blocks": {
+			"core/paragraph": {
+				"color": {
+					"palette": []
+				}
+			}
+		},
+		"border": {
+			"customColor": false
+		},
 		"color": {
 			"custom": false,
 			"customGradient": false,
 			"link": false,
 			"palette": [
+				{
+					"slug": "black",
+					"color": "#232323",
+					"name": "Black"
+				},
+				{
+					"slug": "white",
+					"color": "#ffffff",
+					"name": "White"
+				},
 				{
 					"slug": "primary",
 					"color": "#336699",
@@ -35,8 +55,26 @@
 					"slug": "secondary-light",
 					"color": "#9580FE",
 					"name": "Secondary Light"
+				},
+				{
+					"slug": "grey",
+					"color": "#afafaf",
+					"name": "Grey"
+				},
+				{
+					"slug": "grey-dark",
+					"color": "#878787",
+					"name": "Grey Dark"
+				},
+				{
+					"slug": "grey-light",
+					"color": "#d1d1d1",
+					"name": "Grey Light"
 				}
 			]
+		},
+		"typography": {
+			"fontSizes": []
 		}
 	}
 }

@@ -63,24 +63,19 @@ module.exports = function(grunt) {
 			options: {
 				livereload: true
 			},
-			css: {
+			php: {
+				files: ['*.php','woocommerce/*.php','template-parts/*/*.php'],
+			},
+			sass: {
+				options: {
+					livereload: false
+				},
 				files: ['*.scss','**/**/*.scss'],
 				tasks: ['dart-sass:dev','postcss:dev'],
 			},
-			php: {
-				files: ['*.php','woocommerce/*.php','template-parts/*/*.php'],
-				options: {
-					spawn: true
-				}
-			},
-			livereload: {
-				options: {
-					livereload: true
-				},
-				files: [
-					'*.php',
-					'*.css'
-				]
+			css: {
+				files: ['style.css'],
+				tasks: []
 			}
 		}
 

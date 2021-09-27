@@ -68,7 +68,7 @@ module.exports = function(grunt) {
 				tasks: ['dart-sass:dev','postcss:dev'],
 			},
 			php: {
-				files: ['*.php','woocommerce/*.php'],
+				files: ['*.php','woocommerce/*.php','template-parts/*/*.php'],
 				options: {
 					spawn: true
 				}

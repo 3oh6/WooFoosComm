@@ -10,6 +10,10 @@
 
 
 
+<?php get_template_part( 'template-parts/footer/footer-widgets' ); ?>
+
+
+
 <footer class="bottom">
 
 	<nav class="top_menu" id="bottomMenu" aria-label="Bottom Navigation">

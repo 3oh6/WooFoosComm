@@ -5,7 +5,7 @@
  * @since 1.0.0
  */
 
-add_action( 'after_setup_theme', 'woofooscomm__theme_setup' );
+
 
 function woofooscomm__theme_setup() {
 
@@ -14,8 +14,8 @@ function woofooscomm__theme_setup() {
 
 		function woofooscomm__register_nav_menu() {
 			register_nav_menus( array(
-				'top_menu'    => __( 'Top Menu', 'text_domain' ),
-				'bottom_menu' => __( 'Bottom Menu', 'text_domain' ),
+				'top_menu'    => __( 'Top Menu', 'WooFoosComm' ),
+				'bottom_menu' => __( 'Bottom Menu', 'WooFoosComm' ),
 			) );
 		}
 
@@ -40,16 +40,20 @@ function woofooscomm__theme_setup() {
 	/* Add theme support for the WooComm */
 	add_theme_support( 'woocommerce' );
 
-	/* Include required files.*/
+	/* Include external functions stolen from other sites ... no joke. */
 	require get_template_directory() . '/inc/woofooscoom-functions.php';
+	require get_template_directory() . '/inc/woofooscoom-widgets.php';
 
 }
+add_action( 'after_setup_theme', 'woofooscomm__theme_setup' );
 
 
 
 /* Admin > Template > Template Select — Modifications */
 function woofooscomm__template_select_title( $label, $context ) {
+
 	return __( 'Site Width', 'WooFoosComm' );
+
 }
 add_filter( 'default_page_template_title', 'woofooscomm__template_select_title', 10, 2 );
 
@@ -64,7 +68,7 @@ function woofooscomm__breadcrumbs() {
         'wrap_after'  => '</nav>',
         'before'      => '<span>',
         'after'       => '</span>',
-        'home'        => _x( 'Home', 'breadcrumb', 'woocommerce' ),
+        'home'        => _x( 'Home', 'breadcrumb', 'WooFoosComm' ),
     );
 
 }
@@ -168,6 +172,7 @@ add_action( 'wp_footer', 'woofooscomm__load_foot_items' );
 
 
 
-/* Remove the core <main> markup to woocommerce pages */
+/* Remove the core <main> markup to woocommerce views */
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10,0 );
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10,0 );
+

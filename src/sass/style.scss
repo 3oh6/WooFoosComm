@@ -429,6 +429,18 @@ body::-webkit-scrollbar {
 
 } // bikelane
 
+
+
+
+
+
+
+
+
+.bottom_widget__container {
+	@extend .content__site_width;
+}
+
 .bottom {
 	@extend .content__site_width;
 

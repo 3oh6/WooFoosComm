@@ -26,7 +26,7 @@ GeneratePress is based on Underscores http://underscores.me/, (C) 2012-2021 Auto
 
 
 /* Overriding GeneratePress CSS
-*. If this gets too big, time to think about dequiing
+*  If this gets too big, time to think about dequiing
 */
 .contained-content.separate-containers .inside-article,
 .contained-content.one-container .site-content {
@@ -39,9 +39,24 @@ GeneratePress is based on Underscores http://underscores.me/, (C) 2012-2021 Auto
 
 
 
+
+
 /* Overriding Wordpress CSS
-*. If this gets too big, time to think about dequiing
+*  If this gets too big, time to think about dequiing
 */
+.wp-block-cover__inner-container {
+	h1, h2, h3 {
+		font-size: 75px;
+		font-weight: bold;
+		margin-bottom: 0;
+	}
+
+	p {
+		font-size: var(--wp--preset--font-size--medium);
+		margin: 0;
+	}
+}
+
 .wp-block-pullquote {
 
 	&.is-style-solid-color {
@@ -51,8 +66,66 @@ GeneratePress is based on Underscores http://underscores.me/, (C) 2012-2021 Auto
 
 }
 
+.main-navigation .main-nav ul li[class*="current-menu-"] > a,
+.main-navigation .main-nav ul li[class*="current_page_"] > a {
+	color: $primary;
+}
+
+
+
 
 
 /* Overriding WooCommerce CSS
-*. If this gets too big, time to think about dequiing
+*  If this gets too big, time to think about dequiing
 */
+.woocommerce-message,
+.woocommerce-info {
+	border-top-color: $primary;
+
+	&:before {
+		color: $primary;
+	}
+}
+.woocommerce ul.products li.product .price {
+	color: $primary;
+}
+
+.woocommerce div.product {
+	p.price,
+	span.price,
+	.stock {
+		color: $primary;
+	}
+}
+
+.woocommerce .woocommerce-breadcrumb {
+	a {
+		color: $black;
+	}
+}
+
+.woocommerce #respond input#submit.alt,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt {
+	background-color: $grey__light;
+	color: $black;
+
+	&:hover, &:focus {
+		background-color: #dfdcde;
+		color: $black;
+	}
+}
+
+.woocommerce a.remove {
+	background: $primary__light;
+	color: $white !important;
+
+	&:hover {
+		background: $primary;
+	}
+}
+
+.woocommerce form .form-row .required {
+	color: $primary;
+}

@@ -33,12 +33,12 @@
 				},
 				{
 					"slug": "primary-dark",
-					"color": "#21405F",
+					"color": "#BE570E",
 					"name": "Primary Dark"
 				},
 				{
 					"slug": "primary-light",
-					"color": "#3973AD",
+					"color": "#F5AD7A",
 					"name": "Primary Light"
 				},
 				{
@@ -58,7 +58,7 @@
 				},
 				{
 					"slug": "grey",
-					"color": "#afafaf",
+					"color": "#515151",
 					"name": "Grey"
 				},
 				{
@@ -68,7 +68,7 @@
 				},
 				{
 					"slug": "grey-light",
-					"color": "#d1d1d1",
+					"color": "#ebe9eb",
 					"name": "Grey Light"
 				}
 			]

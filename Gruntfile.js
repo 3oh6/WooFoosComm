@@ -64,7 +64,7 @@ module.exports = function(grunt) {
 				livereload: true
 			},
 			php: {
-				files: ['*.php','woocommerce/*.php','template-parts/*/*.php'],
+				files: ['*.php','**/**/*.php'],
 			},
 			sass: {
 				options: {

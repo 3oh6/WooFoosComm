@@ -4,7 +4,8 @@
 		"blocks": {
 			"core/paragraph": {
 				"color": {
-					"palette": []
+					"palette": [],
+					"fontSizes": []
 				}
 			}
 		},
@@ -28,33 +29,18 @@
 				},
 				{
 					"slug": "primary",
-					"color": "#EF7A27",
+					"color": "#CD5C5D",
 					"name": "Primary"
 				},
 				{
-					"slug": "primary-dark",
-					"color": "#BE570E",
-					"name": "Primary Dark"
-				},
-				{
 					"slug": "primary-light",
-					"color": "#F5AD7A",
+					"color": "#E09696",
 					"name": "Primary Light"
 				},
 				{
 					"slug": "secondary",
-					"color": "#5533ff",
+					"color": "#802A2B",
 					"name": "Secondary"
-				},
-				{
-					"slug": "secondary-dark",
-					"color": "#2104AE",
-					"name": "Secondary Dark"
-				},
-				{
-					"slug": "secondary-light",
-					"color": "#9580FE",
-					"name": "Secondary Light"
 				},
 				{
 					"slug": "grey",

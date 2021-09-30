@@ -1,16 +1,16 @@
 /*!
-Theme Name: WooFoosGenerate
-Theme URI: https://wooFoosComm.dev
+Theme Name: ReSkilled Life
+Theme URI: https://reskilledlife.com
 Author: Jody Bailey
 Author URI: https://jodybailey.ca
-Description: My WP/WC starter child theme of GeneratePress theme. A barebones, fast, ready to rock and roll starter theme for building out a modern WP site.
+Description: WP/WC child theme of GeneratePress.
 Version: 1.0.0
 Requires at least: 4.5.0
 Tested up to: 5.8
 Requires PHP: 5.4.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: woofoosgenerate
+Text Domain: reskilled
 Template: GeneratePress
 
 This template is a child of GeneratePress https://generatepress.com, (C) Tom Usborne https://tomusborne.com
@@ -21,13 +21,19 @@ GeneratePress is based on Underscores http://underscores.me/, (C) 2012-2021 Auto
 // Grab our child theme variables.
 @import "src/sass/theme_variables";
 @import "src/sass/theme_mixins";
-@import "src/sass/theme_resets";
+@import "src/sass/theme_reset";
 
 
 
 /* Overriding GeneratePress CSS
 *  If this gets too big, time to think about dequiing
 */
+.button,
+.wp-block-button__link,
+.wp-block-button .wp-block-button__link {
+	border-radius: $border_radius;
+}
+
 .contained-content.separate-containers .inside-article,
 .contained-content.one-container .site-content {
 	padding: 40px;

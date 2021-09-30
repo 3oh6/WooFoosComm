@@ -17,7 +17,7 @@ function woofoosgenerate__theme_setup() {
 	) );
 
 	/* Include external functions stolen from other sites ... no joke. */
-	require get_theme_file_path() . '/inc/woofoosgenerate-functions.php';
+	require get_theme_file_path() . '/src/woofoosgenerate-functions.php';
 
 }
 

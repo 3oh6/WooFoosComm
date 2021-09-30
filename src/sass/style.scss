@@ -43,6 +43,14 @@ GeneratePress is based on Underscores http://underscores.me/, (C) 2012-2021 Auto
 	max-width: $width__contained;
 }
 
+.site-info {
+	background-color: $primary;
+}
+
+	.inside-site-info {
+		justify-content: inherit;
+	}
+
 
 
 
